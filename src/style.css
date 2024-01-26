@@ -1,0 +1,69 @@
+/*selecting before and after elements*/
+*,*::before,*::after
+{
+    box-sizing:border-box;
+}
+body
+{
+    margin:0;
+    background-color:black;
+}
+/*entire calaculator body properties*/
+.calculator-grid
+{
+    display:grid;
+    margin-top:2rem;
+    grid-template-columns: repeat(4,6rem);
+    justify-content: center;
+    grid-template-rows: minmax(7rem,auto) repeat(5,6rem);
+}
+/*button text color and border for buttons*/
+.calculator-grid > button
+{
+    color:white;
+    cursor: pointer;
+    font-size: 1.75rem;
+    border: .25px solid white;
+    outline: none;
+    background-color: transparent;
+    
+}
+/*upon selecting chaning the state color*/
+.calculator-grid >button:hover,
+.calculator-grid >button:focus
+{
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+.span-two
+{
+    grid-row: span 2;
+}
+/*output field to have */
+.output
+{
+    grid-column: 1/-1;
+    background-color: transparent;
+    display: flex;/*to display the content from right to left*/
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;/*wrap the text in the output if it has more numbers*/
+    word-break: break-all;
+    border: .25px solid white;
+    
+    
+}
+.output .previous-operand
+{
+   
+    color: white;
+    font-size: 1.5rem;
+}
+.output .current-operand
+{
+    
+    color: white;
+    font-size: 2.5rem;
+}
